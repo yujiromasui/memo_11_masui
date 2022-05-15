@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 32px;
+  width: 100%;
+  background-color: gainsboro;
+}
+header {
+  background-color:gainsboro;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  background-color: gainsboro;
+}
+
+p {
+  font-size: 24px;
+  text-align: left;
+  margin-left: 24px;
+  border-bottom: 1px solid #fff;
+}
+ul {
+  padding: 0;
+  table-layout: fixed;
+  font-size: 80%;
+  margin: 0 3%;
+  text-align: center;
+  margin-top: 10px;
+}
+li {
+  list-style-type: none;
+  border: 1px solid #666;
+  background-color:whitesmoke;
+  display: table-cell; /* 定義 */
+  cursor: pointer;
+  color: gray;
+  width: 15%;
+  border: 2px solid #ccc;
+}
+li:hover {
+  background:whitesmoke;
+  color:black;
+}
+textarea {
+  margin: 10px 3%;
+  width: 95%;
+  height: 100px;
+  font-size: 80%;
+}
+#key {
+  margin: 0 3%;
+  width: 95%;
+  font-size: 80%;
+  background-color: #e1efff;
+}
+table {
+  margin: 20px 3%;
+  border: 1px solid whitesmoke;
+  width: 96%;
+}
+th {
+  width: 30%;
+  font-size: 24px;
+  background-color: whitesmoke;
+  border-bottom: 1px solid gainsboro;
+}
+
+#data {
+  width: 450px;
+}
+
+td {
+  font-size: 16px;
+  background-color: rgb(241, 239, 239);
+  border-bottom: 1px solid gainsboro;
+}
+input {
+  margin: 10px 3%;
+  width: 95%;
+  height: 40px;
+  font-size: 80%
+}
+
+select {
+  margin: 10px 3%;
+  width: 20%;
+  height: 40px;
+  font-size: 80%;
+}
+
+#star{
+  font-size: 24px;
+}
+
+#importance {
+  text-align: center;
+}
+

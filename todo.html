@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>To-do list</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<header>
+
+</header>
+<main>
+    <ul>
+        <li id="add">Add</li>
+        <li id="done">Done</li>
+    </ul>
+    <table id="TODO">
+        <tr>
+            <th>✅優先度</th>
+            <th id="data">
+                <select name="importance" id="importance">
+                    <option value="no">-</option>
+                    <option value="high">High</option>
+                    <option value="middle">Middle</option>
+                    <option value="low">Low</option>
+                </select>  
+        </tr>
+        <tr>
+            <th>✅To-do</th>
+            <th id="data">
+                <input type="text" id="todo">
+            </th>
+        </tr>
+        <tr>
+            <th>✅Memo</th>
+            <th id="data">
+                <textarea id="memo"></textarea>
+            </th>
+        </tr>   
+    </table>
+
+<p id="star">🌟リスト</p>
+<table class= "tablesorter" id="list">
+    <thead>
+        <tr>
+            <th>✅優先度</th>
+            <th>✅To-do</th>
+            <th>✅Memo</th>
+        </tr>
+    </thead>
+    <tbody id="sort">
+        <!-- ここにappendで追加データが挿入される -->
+    </tbody>
+</table>
+</main>
+
+    <script>
+// Add クリックイベント
+$("#add").on("click",function(){
+    alert("頑張って💪");
+    // 値の取得・保存
+    const importance = $("#importance").val();
+    const todo = $("#todo").val();
+    const memo = $("#memo").val();
+    const date = $("#date").val();
+    localStorage.setItem(importance,todo,memo,date);
+    const html =
+    `<tr>
+        <th>${importance}</th>
+        <th>${todo}</th>
+        <th>${memo}</th>
+    </tr>`
+    $("#list").append(html);
+});
+
+// Done クリックイベント
+$("#done").on("click", function(){
+    alert("お疲れ様👏");
+    // 値の削除
+    localStorage.clear();
+    // HTML出力
+    $("#list").empty();
+});
+
+// ページ読み込み：保存データ取得表示
+for(let i = 0; i < localStorage.length; i++){
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const html = `<tr><th>${key}</th><td>${value}</td></tr>`;
+    S("#list").append(html);
+}
+
+$(function() {
+    $("#sort").sortable();
+});
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js">
+    $(document).ready(function() { 
+	$("#list").tablesorter();
+});
+</script>
+</body>
+</html>
